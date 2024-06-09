@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <templates xml:space="preserve">
+        <t t-name="toy_commerce.Template" owl="1">
+            <div class="row">
+                <div class="col-md-6 p-2">
+                    <h5 class="mb-2">ပြည်နယ်နှင့် တိုင်းဒေသကြီး</h5>
+                    <select class="form-select form-select-lg mb-3"  id="region" name="region" required="1" t-on-change="onChangeData">
+                        <option>------</option>
+                        <t t-foreach="regionData" t-key="g" t-as="g">
+                            <option t-att-value="g.id" class="fw-bold fs-6"><t t-out="g.name"/></option>
+                        </t>
+                      </select>
+                </div>
+                <div class="col-md-6 p-2">
+                    <h5 class="mb-2">မြို့နယ် စျေးနှုန်း</h5>
+                    <select class="form-select form-select-lg mb-3" t-on-change="setDelPrice"   name="state" required="1">
+                        <option>------</option>
+                        <t t-foreach="stateData" t-key="s" t-as="s">
+                            
+                        <option t-att-value="s.id" class="fw-bold fs-6"><t t-out="s.name"/>,<t t-out="s.price"/></option>
+                        </t>
+                      </select>
+                </div>
+                  
+            </div>
+    
+    
+            <div class="row justify-content-between mt-2">
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">အခြေအနေ</label>
+                    <select id="inputState" class="form-select" name="condition"  t-on-click="callFast"> 
+                      <option selected="selected" value="normal">ပုံမှန်</option>
+                      <option value="fast">အမြန်</option>
+                    </select>
+                  </div>
+                <div class="col-md-6 border p-2 shadow shadow-md fast_layer d-none">
+                    <h5 class="mb-4 text-primary">ပစ္စည်းအမြန် ဝယ်ခြင်း</h5>
+                    <div cass="text-break fw-bold">
+                        <p class=" fw-bold">ပစ္စည်းအမြန်မှာယူသူတိုင်းကို  order တင်ပြီး နောက် 8 နာရီအတွင်း ပေးပို့ပေးပါသည်။</p>
+                        <span class="fw-bold">" Delivery Charge ကတော့ ၂ ဆ ဖြစ်ပါသည် "</span>
+                        <p class="fw-bold">မှာယူလိုပါက prive telegram သို့ တိုက်ရိုက်ဆက်သွယ်လိုက်ပါ။</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" mt-5 text-center">
+                <button type="submit" class="btn btn-primary btn-md px-5 col-md-6">ပစ္စည်းမှာရန်</button>
+            </div>
+        </t>
+    </templates>

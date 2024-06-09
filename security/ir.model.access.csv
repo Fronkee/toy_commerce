@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+toy_commerce.access_deli_price,access_deli_price,toy_commerce.model_deli_price,,1,1,1,1
+toy_commerce.access_deli_region,access_deli_region,toy_commerce.model_deli_region,,1,1,1,1
