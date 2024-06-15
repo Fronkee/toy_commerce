@@ -67,7 +67,7 @@
                                     </div>
                                 </t>
                             </t>
-                            <div t-attf-class="#{error.get('street') and 'o_has_error'} div_street col-lg-12 mb-2 d-none">
+                            <div t-attf-class="#{error.get('street') and 'o_has_error'} div_street col-lg-12 mb-2">
                                 <label class="col-form-label" for="street">Street and Number</label>
                                 <input type="text" name="street" required="0" t-attf-class="form-control #{error.get('street') and 'is-invalid' or ''}" t-att-value="'street' in checkout and checkout['street']" />
                             </div>
@@ -80,7 +80,7 @@
                             <t t-if="'zip' in zip_city and zip_city.index('zip') &lt; zip_city.index('city')">
                                 <div t-attf-class="#{error.get('zip') and 'o_has_error'} div_zip col-md-4 mb-2">
                                     <label class="col-form-label label-optional" for="zip">Zip Code</label>
-                                    <input type="text" name="zip" t-attf-class="form-control #{error.get('zip') and 'is-invalid' or ''}" t-att-value="'zip' in checkout and checkout['zip']" />
+                                    <input type="text" name="zip" t-attf-class="form-control #{error.get('zip') and 'is-invalid' or ''}" t-att-value="11211" />
                                 </div>
                             </t>
                             <div t-attf-class="div_city col-md-8 mb-2">
@@ -97,12 +97,7 @@
                             <div t-attf-class="#{error.get('country_id') and 'o_has_error'} div_country col-lg-6 mb-2">
                                 <label class="col-form-label" for="country_id">Country</label>
                                 <select id="country_id" name="country_id" t-attf-class="form-select #{error.get('country_id') and 'is-invalid' or ''}" t-att-mode="mode[1]">
-                                    <option value="">Country...</option>
-                                    <t t-foreach="countries" t-as="c">
-                                        <option t-att-value="c.id" t-att-selected="c.id == (country and country.id or -1)">
-                                            <t t-esc="c.name" />
-                                        </option>
-                                    </t>
+                                    <option value="145">Myanmar</option>
                                 </select>
                             </div>
                             <div t-attf-class="#{error.get('state_id') and 'o_has_error'} div_state col-lg-6 mb-2" t-att-style="(not country or not country.state_ids) and 'display: none'">
