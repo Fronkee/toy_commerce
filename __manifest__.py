@@ -8,7 +8,7 @@
         'views/website_address.xml'
         ],
     'category':'Customization',
-    'depends':['web','website_sale','base','payment_demo'],
+    'depends':['web','website_sale','base','payment_demo','sale'],
     'application':True,
     'assets':{
         'web.assets_frontend':[
