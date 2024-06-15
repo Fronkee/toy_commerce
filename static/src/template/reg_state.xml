@@ -5,7 +5,7 @@
                 <div class="col-md-6 p-2">
                     <h5 class="mb-2">ပြည်နယ်နှင့် တိုင်းဒေသကြီး</h5>
                     <select class="form-select form-select-lg mb-3"  id="region" name="region" required="1" t-on-change="onChangeData">
-                        <option>------</option>
+                        <option vlaue="0">------</option>
                         <t t-foreach="regionData" t-key="g" t-as="g">
                             <option t-att-value="g.id" class="fw-bold fs-6"><t t-out="g.name"/></option>
                         </t>
@@ -14,7 +14,7 @@
                 <div class="col-md-6 p-2">
                     <h5 class="mb-2">မြို့နယ် စျေးနှုန်း</h5>
                     <select class="form-select form-select-lg mb-3" t-on-change="setDelPrice"   name="state" required="1">
-                        <option>------</option>
+                        <option value="0">------</option>
                         <t t-foreach="stateData" t-key="s" t-as="s">
                             
                         <option t-att-value="s.id" class="fw-bold fs-6"><t t-out="s.name"/>,<t t-out="s.price"/></option>
