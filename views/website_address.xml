@@ -90,7 +90,7 @@
                                 </div>
                                 <div t-attf-class=" div_country col-lg-6 mb-2">
                                     <label class="col-form-label" for="country_id">Country</label>
-                                    <select id="country_id" name="country_id" t-attf-class="form-control" t-att-mode="mode[1]">
+                                    <select id="country_id" name="country_id" t-attf-class="form-control">
                                         <option value="145">Myanmar</option>
                                     </select>
                                 </div>
