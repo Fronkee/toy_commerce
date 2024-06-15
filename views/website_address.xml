@@ -94,9 +94,9 @@
                                 </div>
                             </t>
                             <div class="w-100"/>
-                            <div t-attf-class="#{error.get('country_id') and 'o_has_error'} div_country col-lg-6 mb-2">
+                            <div t-attf-class="div_country col-lg-6 mb-2">
                                 <label class="col-form-label" for="country_id">Country</label>
-                                <select id="country_id" name="country_id" required="0" t-attf-class="form-select #{error.get('country_id') and 'is-invalid' or ''}" t-att-mode="mode[1]">
+                                <select id="country_id" name="country_id" required="0" t-attf-class="form-select" t-att-mode="mode[1]" t-att-value="myanmar">
                                     <option value="">Country...</option>
                                     <t t-foreach="countries" t-as="c">
                                         <option t-att-value="c.id" t-att-selected="c.id == (country and country.id or -1)">
