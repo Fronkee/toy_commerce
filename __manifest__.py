@@ -5,7 +5,7 @@
         'security/ir.model.access.csv',
         'views/payment.xml',
         'views/deli_config.xml',
-        'views/website_address.xml'
+        # 'views/website_address.xml'
         ],
     'category':'Customization',
     'depends':['web','website_sale','base','payment_demo','sale'],
