@@ -25,8 +25,8 @@
                 <input type="text" t-att-value="website_sale_order.amount_total" class="d-none" id="monetary_field_total"/>
                 <td colspan="2" class="border-0 ps-0 pt-3"><strong>Total</strong></td>
                 <td class="text-end border-0 px-0 pt-3">
-                   $<strong class="monetary_field text-end p-0 final_total" 
-                            t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                   <strong class="monetary_field text-end p-0 final_total" 
+                            t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/> K
                 </td>
             </tr>
         </xpath>
