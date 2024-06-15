@@ -78,12 +78,12 @@
                             <div class="w-100"/>
                             <t t-set='zip_city' t-value='country and [x for x in country.get_address_fields() if x in ["zip", "city"]] or ["city", "zip"]'/>
                             <t t-if="'zip' in zip_city and zip_city.index('zip') &lt; zip_city.index('city')">
-                                <div t-attf-class="#{error.get('zip') and 'o_has_error'} div_zip col-md-4 mb-2">
+                                <div t-attf-class="#{error.get('zip') and 'o_has_error'} div_zip col-md-4 mb-2 d-none">
                                     <label class="col-form-label label-optional" for="zip">Zip Code</label>
                                     <input type="text" name="zip" t-attf-class="form-control #{error.get('zip') and 'is-invalid' or ''}" t-att-value="11211" />
                                 </div>
                             </t>
-                            <div t-attf-class="div_city col-md-8 mb-2">
+                            <div t-attf-class="div_city col-md-6 mb-2">
                                 <label class="col-form-label" for="city">City</label>
                                 <input type="text" name="city" required="0" t-attf-class="form-control" t-att-value="" />
                             </div>
@@ -94,9 +94,9 @@
                                 </div>
                             </t>
                             <div class="w-100"/>
-                            <div t-attf-class="#{error.get('country_id') and 'o_has_error'} div_country col-lg-6 mb-2">
+                            <div t-attf-class=" div_country col-lg-6 mb-2">
                                 <label class="col-form-label" for="country_id">Country</label>
-                                <select id="country_id" name="country_id" t-attf-class="form-select #{error.get('country_id') and 'is-invalid' or ''}" t-att-mode="mode[1]">
+                                <select id="country_id" name="country_id" t-attf-class="" t-att-mode="mode[1]">
                                     <option value="145">Myanmar</option>
                                 </select>
                             </div>
