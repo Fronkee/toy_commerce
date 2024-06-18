@@ -36,15 +36,16 @@
                                 <label class="col-form-label" for="name">Full name</label>
                                 <input type="text" name="name" required="0" t-attf-class="form-control" t-att-value="'name' in checkout and checkout['name']" />
                             </div>
+                            <div t-attf-class="#{error.get('phone') and 'o_has_error'} col-lg-6 mb-2" id="div_phone">
+                                <label class="col-form-label" for="phone">Phone</label>
+                                <input type="tel" name="phone" t-attf-class="form-control #{error.get('phone') and 'is-invalid' or ''}" t-att-value="'phone' in checkout and checkout['phone']" />
+                            </div>
                             <div class="w-100"/>
                             <div t-attf-class="col-lg-6 mb-2 d-none" id="div_email">
                                 <label t-attf-class="col-form-label #{mode[1] == 'shipping' and 'label-optional' or ''}" for="email">Email</label>
                                 <input type="email" name="email" required="0" t-attf-class="form-control" value="default@gmail.com" />
                             </div>
-                            <div t-attf-class="#{error.get('phone') and 'o_has_error'} col-lg-6 mb-2" id="div_phone">
-                                <label class="col-form-label" for="phone">Phone</label>
-                                <input type="tel" name="phone" t-attf-class="form-control #{error.get('phone') and 'is-invalid' or ''}" t-att-value="'phone' in checkout and checkout['phone']" />
-                            </div>
+
                             <t t-if="website._display_partner_b2b_fields()">
                                 <div class="w-100"/>
                                 <t t-set='vat_warning' t-value="'vat' in checkout and checkout['vat'] and not can_edit_vat" />
