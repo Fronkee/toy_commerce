@@ -83,9 +83,9 @@
                                     <input type="text" name="zip" t-attf-class="form-control #{error.get('zip') and 'is-invalid' or ''}" t-att-value="11211" />
                                 </div>
                             </t>
-                            <div t-attf-class="div_city col-md-12 mb-2">
+                            <div t-attf-class="div_city col-md-12 mb-2 d-none">
                                 <label class="col-form-label" for="city">City</label>
-                                <input type="text" name="city" required="0" t-attf-class="form-control" t-att-value="" />
+                                <input type="text" name="city" required="0" t-attf-class="form-control" t-att-value="yangon"/>
                             </div>
                             <t t-if="'zip' in zip_city and zip_city.index('zip') &gt; zip_city.index('city')">
                                 <div t-attf-class="#{error.get('zip') and 'o_has_error'} div_zip col-md-4 mb-2 d-none">
