@@ -39,7 +39,7 @@
                             <div class="w-100"/>
                             <div t-attf-class="col-lg-6 mb-2" id="div_email">
                                 <label t-attf-class="col-form-label #{mode[1] == 'shipping' and 'label-optional' or ''}" for="email">Email</label>
-                                <input type="email" name="email" required="0" t-attf-class="form-control" t-att-value="custo@gmail.com" />
+                                <input type="email" name="email" required="0" t-attf-class="form-control" t-att-value="'email' in checkout and checkout['email']" />
                             </div>
                             <div t-attf-class="#{error.get('phone') and 'o_has_error'} col-lg-6 mb-2" id="div_phone">
                                 <label class="col-form-label" for="phone">Phone</label>
@@ -83,9 +83,9 @@
                                     <input type="text" name="zip" t-attf-class="form-control #{error.get('zip') and 'is-invalid' or ''}" t-att-value="11211" />
                                 </div>
                             </t>
-                            <div t-attf-class="col-md-12 mb-2">
+                            <div t-attf-class="div_city col-md-12 mb-2">
                                 <label class="col-form-label" for="city">City</label>
-                                <input type="text" name="city" required="1" t-attf-class="form-control" t-att-value="yangon"/>
+                                <input type="text" name="city" required="0" t-attf-class="form-control" t-att-value="yangon" />
                             </div>
                             <t t-if="'zip' in zip_city and zip_city.index('zip') &gt; zip_city.index('city')">
                                 <div t-attf-class="#{error.get('zip') and 'o_has_error'} div_zip col-md-4 mb-2 d-none">
