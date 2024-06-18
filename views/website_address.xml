@@ -32,14 +32,14 @@
                     </t>
                     <form t-if="account_on_checkout != 'mandatory' or not is_public_user" action="/shop/address" method="post" class="checkout_autoformat">
                         <div class="row">
-                            <div t-attf-class="#{error.get('name') and 'o_has_error'} div_name col-lg-12 mb-2">
+                            <div t-attf-class="div_name col-lg-12 mb-2">
                                 <label class="col-form-label" for="name">Full name</label>
-                                <input type="text" name="name" t-attf-class="form-control #{error.get('name') and 'is-invalid' or ''}" t-att-value="'name' in checkout and checkout['name']" />
+                                <input type="text" name="name" required="0" t-attf-class="form-control" t-att-value="'name' in checkout and checkout['name']" />
                             </div>
                             <div class="w-100"/>
-                            <div t-attf-class="#{error.get('email') and 'o_has_error'} col-lg-6 mb-2" id="div_email">
+                            <div t-attf-class="col-lg-6 mb-2" id="div_email">
                                 <label t-attf-class="col-form-label #{mode[1] == 'shipping' and 'label-optional' or ''}" for="email">Email</label>
-                                <input type="email" name="email" required="0" t-attf-class="form-control #{error.get('email') and 'is-invalid' or ''}" t-att-value="'email' in checkout and checkout['email']" />
+                                <input type="email" name="email" required="0" t-attf-class="form-control" t-att-value="'email' in checkout and checkout['email']" />
                             </div>
                             <div t-attf-class="#{error.get('phone') and 'o_has_error'} col-lg-6 mb-2" id="div_phone">
                                 <label class="col-form-label" for="phone">Phone</label>
@@ -100,7 +100,7 @@
                                     <option value="145">Myanmar</option>
                                 </select>
                             </div>
-                            <div t-attf-class="#{error.get('state_id') and 'o_has_error'} div_state col-lg-6 mb-2" t-att-style="(not country or not country.state_ids) and 'display: none'">
+                            <div t-attf-class="#{error.get('state_id') and 'o_has_error'} div_state col-lg-6 mb-2 d-none" t-att-style="(not country or not country.state_ids) and 'display: none'">
                                 <label class="col-form-label" for="state_id">State / Province</label>
                                 <select name="state_id" t-attf-class="form-select #{error.get('state_id') and 'is-invalid' or ''}" data-init="1">
                                     <option value="">State / Province...</option>
