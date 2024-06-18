@@ -83,7 +83,7 @@
                                     <input type="text" name="zip" t-attf-class="form-control #{error.get('zip') and 'is-invalid' or ''}" t-att-value="11211" />
                                 </div>
                             </t>
-                            <div t-attf-class="div_city col-md-12 mb-2 d-none">
+                            <div t-attf-class="col-md-12 mb-2">
                                 <label class="col-form-label" for="city">City</label>
                                 <input type="text" name="city" required="0" t-attf-class="form-control" t-att-value="yangon"/>
                             </div>
