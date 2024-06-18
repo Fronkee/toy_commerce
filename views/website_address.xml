@@ -32,7 +32,7 @@
                     </t>
                     <form t-if="account_on_checkout != 'mandatory' or not is_public_user" action="/shop/address" method="post" class="checkout_autoformat">
                         <div class="row">
-                            <div t-attf-class="div_name col-lg-12 mb-2">
+                            <div t-attf-class="div_name col-lg-6 mb-2">
                                 <label class="col-form-label" for="name">Full name</label>
                                 <input type="text" name="name" required="0" t-attf-class="form-control" t-att-value="'name' in checkout and checkout['name']" />
                             </div>
