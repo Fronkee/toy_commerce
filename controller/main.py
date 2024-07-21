@@ -83,15 +83,27 @@ class WebsiteSale(payment_portal.PaymentPortal):
                 'region_id':int(post.get('region')),
                 'condition':post.get("condition")
             })
-            order.action_confirm()
 
-            print("Last sale order id is ",sale_order_id,order)
-            return request.redirect('/shop')
+            order_name = ''
+            amount = 0
+            for tem in order.order_line:
+                order_name = f'{tem.product_template_id.name}, {order_name}'
+                amount = tem.price_subtotal + amount
+            data = {
+                'ref': order.name,
+                'name':order.partner_id.name,
+                'address':f'{order.state_id.name},{order.partner_id.street}',
+                'state': order.region_id.name,
+                'ph':order.partner_id.phone,
+                'order_name': order_name,
+                'amount':amount,
+                'deli':order.deli_price
+            }
+            # order.action_confirm()
 
-            # values = self._prepare_shop_payment_confirmation_values(order)
-            # print("I am working =======================",values)
-
-            # return request.render("website_sale.confirmation", values)
+            print("Last sale order id is ",data)
+            return request.render('toy_commerce.order_msg',{'d':data})
         else:
             return request.redirect('/shop')
+
 
